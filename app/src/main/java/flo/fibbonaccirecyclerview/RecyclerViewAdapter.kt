@@ -8,16 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 class RecyclerViewAdapter(var fibonnacci: List<Int>):
     RecyclerView.Adapter<RecyclerViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
-        holder.numberTextView.text = fibonacciNumbers[position].toString()
-
+        var itemView = LayoutInflater.from(parent.context).inflate(R.
+        layout.activity_main, parent, false)
+        return RecyclerViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.tvNumber.text = fibonnacci.get(position)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return fibonnacci.size
     }
 }
 

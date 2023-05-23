@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
 
-    fun getFibonacciNumbers(limit: Int): List<Int> {
+    fun getFibonacciNumbers(end: Int): List<Int> {
         val fibonacciNumbers = mutableListOf(0, 1)
-        for (i in 2 until limit) {
-            fibonacciNumbers.add(fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2])
+        for (n in 2 until end) {
+            fibonacciNumbers.add(fibonacciNumbers[n - 1] + fibonacciNumbers[n - 2])
         }
         return fibonacciNumbers
     }
